@@ -44,5 +44,9 @@ async function checkConnection(useProxy: boolean): Promise<void> {
 const args = process.argv.slice(2);
 const useProxy = args[0] === "true"; // 第一引数が true の場合はプロキシを使用
 
+console.log("ローカルのプロキシ設定:", process.env.HTTP_PROXY);
+console.log("プロキシ設定:", proxyUrl);
+console.log("プロキシを使用:", useProxy ? "はい" : "いいえ");
+
 // 使用例
 checkConnection(useProxy);
