@@ -32,15 +32,15 @@ npm install
 
 3. TypeScript コードを実行して、axios 経由でプロキシ疎通を確認します。
 
-   ```bash
-   npx ts-node src/index.ts
-   ```
+```bash
+npm run dev-proxy
+```
 
-4. テストを実行するには、以下のコマンドを使用します。
+4. プロキシ経由で疎通を行わない場合は次のコマンドを実行します
 
-   ```bash
-   npm test
-   ```
+```bash
+npm run dev
+```
 
 ## 概要
 
