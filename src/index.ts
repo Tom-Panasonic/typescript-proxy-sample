@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as fs from "fs";
+import { format } from "date-fns";
 
 // proxy.jsonからプロキシ設定を読み込む
 const proxyConfig = JSON.parse(fs.readFileSync("./proxy.json", "utf-8"));
@@ -47,6 +48,16 @@ const useProxy = args[0] === "true"; // 第一引数が true の場合はプロ�
 console.log("ローカルのプロキシ設定:", process.env.HTTP_PROXY);
 console.log("プロキシ設定:", proxyUrl);
 console.log("プロキシを使用:", useProxy ? "はい" : "いいえ");
-
+// 日付のフォーマット例
+console.log(format(new Date(), "yyyyMMdd"));
+// 現在の日付を yyyyMMdd 形式で取得する関数
+const getCurrentDateString: () => string = function () {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${year}${month}${day}`;
+};
+console.log(getCurrentDateString());
 // 使用例
 checkConnection(useProxy);
