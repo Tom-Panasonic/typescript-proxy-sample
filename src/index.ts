@@ -20,7 +20,10 @@ async function checkConnection(useProxy: boolean): Promise<void> {
         }
       : {};
 
-    const response = await axios.get(fixedUrl, config);
+    // 同義
+    //const response = await axios.get(fixedUrl, config);
+    const axiosInstance = axios.create(config);
+    const response = await axiosInstance.get(fixedUrl);
 
     console.log(`成功: ${response.status} - ${response.statusText}`);
     console.log("レスポンスデータ:", response.data);
