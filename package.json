@@ -35,5 +35,10 @@
   },
   "include": [
     "src/**/*"
-  ]
+  ],
+  "dependencies": {
+    "axios-cookiejar-support": "^6.0.2",
+    "https-proxy-agent": "^7.0.6",
+    "tough-cookie": "^5.1.2"
+  }
 }
